@@ -1,0 +1,12 @@
+#!/bin/bash
+
+sudo -v # ask for pw only at beginning
+
+brew update
+brew upgrade
+
+brew tap phinze/homebrew-cask
+
+brew install brew-cask
+brew install vnstat
+brew install git
