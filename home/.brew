@@ -10,3 +10,6 @@ brew tap phinze/homebrew-cask
 brew install brew-cask
 brew install vnstat
 brew install git
+brew install wget
+brew install sox
+brew install ffmpeg
