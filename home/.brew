@@ -13,3 +13,5 @@ brew install git
 brew install wget
 brew install sox
 brew install ffmpeg
+brew install tarsnap
+brew install fasd
