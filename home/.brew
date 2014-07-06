@@ -15,3 +15,9 @@ brew install sox
 brew install ffmpeg
 brew install tarsnap
 brew install fasd
+
+# for php yaml extension
+brew install automake
+brew install libyaml
+
+brew cask install moom
