@@ -15,9 +15,16 @@ brew install sox
 brew install ffmpeg
 brew install tarsnap
 brew install fasd
+brew install tree
+brew install ruby-install
+brew install chruby
 
 # for php yaml extension
 brew install automake
 brew install libyaml
 
+brew cask install chromium
+brew cask install filebot
+brew cask install flux
 brew cask install moom
+brew cask install filebot

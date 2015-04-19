@@ -19,4 +19,6 @@ paths:
     singleton: singles/$artist - $title
     # comp: $genre/$album/$track $title
     # albumtype:soundtrack: Soundtracks/$album/$track $title
-
+fetchart:
+    remote_priority: yes
+    maxwidth: 1000

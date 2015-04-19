@@ -45,9 +45,15 @@ plugins=(git fasd)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# ruby (rvm) -- don't use
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# ruby (chruby) -- use
+source /usr/local/share/chruby/chruby.sh
+chruby ruby-2.2.0
 
 # FASD
 alias j='fasd_cd -d'
+[[ -s "/Users/lee/.gvm/scripts/gvm" ]] && source "/Users/lee/.gvm/scripts/gvm"
