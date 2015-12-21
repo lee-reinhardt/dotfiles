@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo -v # ask for pw only at beginning
+sudo -v
 
 brew update
 brew upgrade
@@ -18,6 +18,9 @@ brew install fasd
 brew install tree
 brew install ruby-install
 brew install chruby
+brew install homebrew/dupes/rsync
+brew install htop
+brew install watch
 
 # for php yaml extension
 brew install automake

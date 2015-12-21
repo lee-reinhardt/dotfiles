@@ -1,5 +1,5 @@
-library: /Volumes/goose/beets/music.blb
-directory: /Volumes/goose/beets
+library: /Users/lee/Music/beets/music.blb
+directory: /Users/lee/Music/beets
 path_format: $artist/$album ($original_year)/$track $title
 import:
     move: yes
@@ -8,10 +8,11 @@ import:
     quiet_fallback: skip
     timid: no
     log: beetslog.txt
+ui:
+    color: yes
 ignore: .AppleDouble ._* *~ .DS_Store Thumbs.db
 art_filename: cover
 threaded: yes
-color: yes
 plugins: fetchart lyrics lastgenre web
 
 paths:
