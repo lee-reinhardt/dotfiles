@@ -3,3 +3,6 @@
 [user]
 	email = lee.reinhardt@gmail.com
 	name = Lee Reinhardt
+[core]
+	excludesfile = /Users/lee/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX

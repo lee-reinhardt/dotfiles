@@ -13,11 +13,9 @@ brew install git
 brew install wget
 brew install sox
 brew install ffmpeg
-brew install tarsnap
+brew install unrar
 brew install fasd
 brew install tree
-brew install ruby-install
-brew install chruby
 brew install homebrew/dupes/rsync
 brew install htop
 brew install watch
@@ -26,8 +24,6 @@ brew install watch
 brew install automake
 brew install libyaml
 
-brew cask install chromium
 brew cask install filebot
 brew cask install flux
 brew cask install moom
-brew cask install filebot
