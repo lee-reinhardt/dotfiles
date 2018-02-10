@@ -1,5 +1,5 @@
-library: /Users/lee/Music/beets/music.blb
-directory: /Users/lee/Music/beets
+library: /Volumes/deep/music/beets/music.blb
+directory: /Volumes/deep/music/beets
 path_format: $artist/$album ($original_year)/$track $title
 import:
     move: yes
@@ -21,7 +21,7 @@ paths:
     # comp: $genre/$album/$track $title
     # albumtype:soundtrack: Soundtracks/$album/$track $title
 fetchart:
-    remote_priority: yes
+    sources: coverart itunes amazon albumart filesystem
     maxwidth: 1000
 ftintitle:
     auto: yes

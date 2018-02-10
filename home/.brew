@@ -19,11 +19,13 @@ brew install tree
 brew install homebrew/dupes/rsync
 brew install htop
 brew install watch
+brew install imagemagick
+brew install diff-so-fancy
 
 # for php yaml extension
 brew install automake
 brew install libyaml
 
-brew cask install filebot
-brew cask install flux
-brew cask install moom
+# brew cask install filebot
+# brew cask install flux
+# brew cask install moom
