@@ -1,6 +1,7 @@
 library: /Volumes/deep/music/beets/music.blb
 directory: /Volumes/deep/music/beets
 path_format: $artist/$album ($original_year)/$track $title
+asciify_paths: true
 import:
     move: yes
     write: yes
