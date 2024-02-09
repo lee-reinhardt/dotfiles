@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+# bushel env
+export AZURE_DEVOPS_EXT_PAT=$(find_secret PAT)
+export HOMEBREW_AZURE_DEVOPS_EXT_PAT=$(find_secret PAT)
+export VAULT_ADDR="https://vault.bushelops.com"
+export DABA_USERNAME=lreinhardt

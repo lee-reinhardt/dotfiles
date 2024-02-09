@@ -1,0 +1,79 @@
+export ZSH=$HOME/.oh-my-zsh
+
+if [[ -n $SSH_CONNECTION ]]; then
+  ZSH_THEME="leeroy-remote"
+else
+  ZSH_THEME="leeroy"
+fi
+
+plugins=(
+  git
+  ssh-agent
+  kubectx
+  kubectl
+  docker
+  docker-compose
+  helm
+  fzf
+  fasd
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# path
+export PATH=$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:/usr/bin:/bin:$HOME/.composer/vendor/bin
+
+# save secrets in macos keychain
+add_secret() { security add-generic-password -a ${USER} -s "$@" -w; }
+find_secret() { security find-generic-password -a ${USER} -s "$@" -w; }
+
+[ "$(hostname)" = "lreinhardt-MBP-14-2021" ] && [ -f ~/.zshrc.bushel ] && source ~/.zshrc.bushel
+
+export EDITOR='code --wait'
+
+alias j="fasd_cd -d"
+alias lt="ls -lt"
+alias lst="ls -t"
+alias rgu="rg -u"
+
+# php/laravel
+alias pa="php artisan"
+
+# k8s
+alias kns="kubens"
+
+# pnpm
+alias p="pnpm"
+alias pi="pnpm install"
+alias pd="pnpm dev"
+alias ps="pnpm start"
+alias pb="pnpm build"
+alias po="pnpm outdated"
+alias pu="pnpm update"
+alias pul="pnpm update -L"
+
+# yarn
+alias y="yarn"
+alias ya="yarn add"
+alias yw="yarn watch"
+alias yd="yarn dev"
+alias ydm="yarn dev:mock"
+alias yp="yarn production"
+alias yc="yarn clean"
+alias yt="yarn test"
+alias ytw="yarn test:watch"
+alias ytsc="yarn ts:check"
+alias ys="yarn start"
+alias yb="yarn build"
+alias yo="yarn outdated"
+alias yba="yarn build:analyze"
+alias yboot="yarn bootstrap"
+alias ysb="yarn storybook"
+
+# nps
+alias nd="nps dev"
+
+# postgres
+alias psql="/opt/homebrew/opt/libpq/bin/psql"
+alias pg_dump="/opt/homebrew/opt/libpq/bin/pg_dump"
+alias pg_restore="/opt/homebrew/opt/libpq/bin/pg_restore"

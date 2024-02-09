@@ -1,0 +1,12 @@
+[user]
+    name = Lee Reinhardt
+    email = lee.reinhardt@gmail.com
+
+[includeIf "gitdir:~/code/bushel/"]
+    path = ~/code/bushel/.gitconfig
+
+[core]
+    pager = diff-so-fancy | less --tabs=4 -RFX
+
+[init]
+    defaultBranch = main
