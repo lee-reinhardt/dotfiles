@@ -27,14 +27,15 @@ export PATH=$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH:/usr/sbin:/sbin:
 add_secret() { security add-generic-password -a ${USER} -s "$@" -w; }
 find_secret() { security find-generic-password -a ${USER} -s "$@" -w; }
 
-[ "$(hostname)" = "lreinhardt-MBP-14-2021" ] && [ -f ~/.zshrc.bushel ] && source ~/.zshrc.bushel
-
 export EDITOR='code --wait'
 
 alias j="fasd_cd -d"
 alias lt="ls -lt"
 alias lst="ls -t"
 alias rgu="rg -u"
+
+# git
+alias gcafu="git commit -a --fixup HEAD && GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash HEAD~2"
 
 # php/laravel
 alias pa="php artisan"
@@ -77,3 +78,17 @@ alias nd="nps dev"
 alias psql="/opt/homebrew/opt/libpq/bin/psql"
 alias pg_dump="/opt/homebrew/opt/libpq/bin/pg_dump"
 alias pg_restore="/opt/homebrew/opt/libpq/bin/pg_restore"
+
+# elixir / phoenix
+alias mdg="mix deps.get"
+alias mc="mix compile"
+alias mps="mix phx.server"
+
+# bushel
+[ "$(hostname)" = "lreinhardt-MBP-14-2021" ] && [ -f ~/.zshrc.bushel ] && source ~/.zshrc.bushel
+
+# peridio
+export GPG_TTY=$(tty)
+
+# direnv
+eval "$(direnv hook zsh)"

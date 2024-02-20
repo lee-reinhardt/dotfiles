@@ -5,6 +5,9 @@
 [includeIf "gitdir:~/code/bushel/"]
     path = ~/code/bushel/.gitconfig
 
+[includeIf "gitdir:~/code/peridio/"]
+    path = ~/code/peridio/.gitconfig
+
 [core]
     pager = diff-so-fancy | less --tabs=4 -RFX
 
