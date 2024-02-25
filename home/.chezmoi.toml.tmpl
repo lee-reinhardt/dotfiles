@@ -1,0 +1,18 @@
+{{- $email := promptStringOnce . "email" "Email" -}}
+{{- $name := promptStringOnce . "name" "Name" -}}
+{{- $github_username := promptStringOnce . "github.user" "Github Username" -}}
+{{- $personal_1password_account := promptStringOnce . "onepassword.personal" "1Password Personal Account" -}}
+{{- $work_1password_account := promptStringOnce . "onepassword.work" "1Password Work Account" -}}
+
+sourceDir = "/Users/lee/.local/share/chezmoi"
+
+[data]
+email = {{ $email | toToml }}
+name = {{ $name | toToml }}
+
+[data.onepassword]
+personal = {{ $personal_1password_account | toToml }}
+work = {{ $work_1password_account | toToml }}
+
+[data.github]
+user = {{ $github_username | toToml }}
