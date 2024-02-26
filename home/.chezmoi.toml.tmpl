@@ -16,3 +16,7 @@ work = {{ $work_1password_account | toToml }}
 
 [data.github]
 user = {{ $github_username | toToml }}
+
+encryption = "gpg"
+[gpg]
+  recipient = {{ $email | toToml }}
