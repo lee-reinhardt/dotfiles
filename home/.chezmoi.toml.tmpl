@@ -1,22 +1,26 @@
 {{- $email := promptStringOnce . "email" "Email" -}}
 {{- $name := promptStringOnce . "name" "Name" -}}
+{{ $passphrase := promptStringOnce . "passphrase" "passphrase" -}}
 {{- $github_username := promptStringOnce . "github.user" "Github Username" -}}
 {{- $personal_1password_account := promptStringOnce . "onepassword.personal" "1Password Personal Account" -}}
 {{- $work_1password_account := promptStringOnce . "onepassword.work" "1Password Work Account" -}}
 
 sourceDir = "/Users/lee/.local/share/chezmoi"
+encryption = "gpg"
 
 [data]
-email = {{ $email | toToml }}
-name = {{ $name | toToml }}
+  email = {{ $email | toToml }}
+  name = {{ $name | toToml }}
+  passphrase = {{ $passphrase | quote }}
 
 [data.onepassword]
-personal = {{ $personal_1password_account | toToml }}
-work = {{ $work_1password_account | toToml }}
+  personal = {{ $personal_1password_account | toToml }}
+  work = {{ $work_1password_account | toToml }}
 
 [data.github]
-user = {{ $github_username | toToml }}
+  user = {{ $github_username | toToml }}
 
-encryption = "gpg"
 [gpg]
   recipient = {{ $email | toToml }}
+  symmetric = true
+  args = ["--batch", "--passphrase", {{ $passphrase | quote }}, "--no-symkey-cache"]
