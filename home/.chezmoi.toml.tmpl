@@ -1,6 +1,5 @@
 {{- $email := promptStringOnce . "email" "Email" -}}
 {{- $name := promptStringOnce . "name" "Name" -}}
-{{ $passphrase := promptStringOnce . "passphrase" "passphrase" -}}
 {{- $github_username := promptStringOnce . "github.user" "Github Username" -}}
 {{- $personal_1password_account := promptStringOnce . "onepassword.personal" "1Password Personal Account" -}}
 {{- $work_1password_account := promptStringOnce . "onepassword.work" "1Password Work Account" -}}
@@ -11,7 +10,6 @@ encryption = "gpg"
 [data]
   email = {{ $email | toToml }}
   name = {{ $name | toToml }}
-  passphrase = {{ $passphrase | quote }}
 
 [data.onepassword]
   personal = {{ $personal_1password_account | toToml }}
@@ -20,7 +18,3 @@ encryption = "gpg"
 [data.github]
   user = {{ $github_username | toToml }}
 
-[gpg]
-  recipient = {{ $email | toToml }}
-  symmetric = true
-  args = ["--batch", "--passphrase", {{ $passphrase | quote }}, "--no-symkey-cache"]
